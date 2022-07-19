@@ -70,7 +70,7 @@ const NavContainer = styled.nav`
         letter-spacing: var(--spacing);
         padding: 0.5rem;
         &:hover {
-          border-bottom: 2px solid var(--clr-green-dark);
+          border-bottom: 3px solid var(--clr-green-dark);
         }
       }
     }
