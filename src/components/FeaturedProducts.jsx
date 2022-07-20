@@ -1,60 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import Carousel from "react-elastic-carousel";
 import { newArrivalProduct } from "../utils/constants";
 import Product from "./Product";
-import CarouselSlider from "react-carousel-slider";
 
-let data = [
-  {
-    des: "1",
-    imgSrc: "https://i.imgur.com/d5aiXJP.jpg",
-  },
-  {
-    des: "2",
-    imgSrc: "https://i.imgur.com/pgCzueK.jpg",
-  },
-  {
-    des: "3",
-    imgSrc: "https://i.imgur.com/7nbAJ0C.jpg",
-  },
-  {
-    des: "4",
-    imgSrc: "https://i.imgur.com/L75otV6.jpg",
-  },
-  {
-    des: "5",
-    imgSrc: "https://i.imgur.com/qkPMr9D.jpg",
-  },
+const breakPoints = [
+  { width: 1, itemsToShow: 1 },
+  { width: 550, itemsToShow: 2 },
+  { width: 768, itemsToShow: 3 },
+  { width: 1200, itemsToShow: 4 },
 ];
-
-let sliderBoxStyle = {
-  height: "250px",
-  //, width: "200px"
-  // , background: "tranparent"
-};
-
-let manner = {
-  autoSliding: { interval: "4s" },
-  duration: "0.3s",
-};
 
 const FeaturedProducts = () => {
   return (
     <Wrapper className="section">
       <div className="title">
         <h2>New Arrival</h2>
+        <div className="underline"></div>
       </div>
       <div className="section-center featured">
-        {/* {newArrivalProduct.slice(0, 3).map((product) => {
-          return <Product key={product.id} {...product} />;
-        })} */}
-
-        <CarouselSlider
-          slideItems={data}
-          manner={manner}
-          sliderBoxStyle={sliderBoxStyle}
-        />
+        <Carousel breakPoints={breakPoints}>
+          {newArrivalProduct.map((product) => {
+            return <Product key={product.id} {...product} />;
+          })}
+        </Carousel>
       </div>
     </Wrapper>
   );
@@ -68,7 +38,8 @@ const Wrapper = styled.section`
 
     gap: 2.5rem;
     img {
-      height: 225px;
+      width: 280px;
+      height: 325px;
     }
   }
 

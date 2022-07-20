@@ -1,19 +1,26 @@
 import React from "react";
+import { FaSearch } from "react-icons/fa";
 
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const Product = ({ imageUrl, name, id, price }) => {
+const Product = ({ imageUrl, name, id, price, description }) => {
   return (
     <Wrapper>
       <div className="container">
         <img src={imageUrl} alt={name} />
-        <Link to={id} />
+        <Link to="/" className="link">
+          <FaSearch />
+        </Link>
       </div>
       <footer>
-        <h5>{name}</h5>
-        <p>{price}</p>
+        <h1>
+          20% Discount <br /> <span>New Arrival Product</span>
+        </h1>
       </footer>
+      <div>
+        <p className="description">{description}</p>
+      </div>
     </Wrapper>
   );
 };
@@ -22,14 +29,14 @@ const Wrapper = styled.article`
   .container {
     position: relative;
     background: var(--clr-black);
-    border-radius: var(--radius);
+    border-radius: 10px 10px 100px 40px;
   }
 
   img {
     width: 100%;
     display: block;
     object-fit: none;
-    border-radius: var(--radius);
+    border-radius: 10px 10px 100px 40px;
     transition: var(--transition);
   }
 
@@ -62,21 +69,29 @@ const Wrapper = styled.article`
   }
 
   footer {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  footer h5,
-  footer p {
-    margin-bottom: 0;
-    font-weight: 400;
+  footer h1 {
+    font-size: 1.8rem;
+  }
+
+  footer span {
+    font-size: 1.2rem;
   }
 
   footer p {
     color: var(--clr-primary-5);
     letter-spacing: var(--spacing);
+  }
+
+  footer .description {
+    display: block;
+    text-align: center;
+    font-size: 12px;
   }
 `;
 
