@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Carousel from "react-elastic-carousel";
 import { newArrivalProduct } from "../utils/constants";
