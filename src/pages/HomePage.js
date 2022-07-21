@@ -5,6 +5,7 @@ import {
   FeaturedProducts,
   SortViews,
   HomePageProducts,
+  DealView,
 } from "../components";
 
 const HomePage = () => {
@@ -14,6 +15,7 @@ const HomePage = () => {
       <FeaturedProducts />
       <SortViews />
       <HomePageProducts />
+      <DealView />
     </main>
   );
 };
