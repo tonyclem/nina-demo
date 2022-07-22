@@ -5,6 +5,8 @@ import FeaturedProducts from "./FeaturedProducts";
 import SortViews from "./SortDisplay";
 import HomePageProducts from "./HomePageProducts";
 import DealView from "./DealView";
+import Reviewer from "./Reviewer";
+import Contact from "./Contact";
 
 export {
   Navbar,
@@ -14,4 +16,6 @@ export {
   SortViews,
   HomePageProducts,
   DealView,
+  Reviewer,
+  Contact,
 };

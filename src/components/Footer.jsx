@@ -1,34 +1,110 @@
 import React from "react";
 import styled from "styled-components";
+import { social } from "../utils/constants";
+import { BsGeoAlt, BsTelephone, BsEnvelope } from "react-icons/bs";
 
 const Footer = () => {
   return (
     <Wrapper>
-      <h5>
+      <div className="container">
+        <div className="about-container">
+          <h2>About us</h2>
+          <h6>
+            Lorem ipsum dolor sit, amet consectetur <br /> adipisicing elit.
+            Expedita, a?
+          </h6>
+          <div className="social">
+            <h3>Stay In Touch</h3>
+            <ul className="social-icons">
+              {social.map((social) => {
+                const { id, url, icon } = social;
+                return (
+                  <li key={id} className="social-icon">
+                    <a href={url}>{icon}</a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
+
+        <div className="info-container">
+          <h2>Information</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+          <div className="contact">
+            <h4>Contact us</h4>
+            <div>
+              <span>
+                <BsGeoAlt />
+              </span>
+              1 Weert Nederland
+            </div>
+            <div>
+              <span>
+                <BsTelephone />
+              </span>
+              (+316 000 0000 00)
+            </div>
+            <div>
+              <span>
+                <BsEnvelope />
+              </span>
+              sales@mail.com
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* <h5>
         &copy; {new Date().getFullYear()} <span>Lady Nina</span>
-      </h5>
+      </h5> */}
     </Wrapper>
   );
 };
 
 const Wrapper = styled.footer`
-  height: 5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: var(--clr-black);
-  text-align: center;
-  span {
-    color: var(--clr-primary-5);
-  }
-  h5 {
-    color: var(--clr-white);
-    margin: 0.1rem;
+  background: gray;
 
-    font-weight: 400;
-    text-transform: none;
-    line-height: 1.25;
+  .container {
+    margin: 0 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+  }
+
+  .about-container h6 {
+    font-size: 1.5rem;
+  }
+
+  .social {
+    margin-top: 2.4rem;
+
+    .social-icons {
+      margin-top: 1.3rem;
+      display: flex;
+      align-items: center;
+
+      li a {
+        padding-right: 1rem;
+        font-size: 1.5rem;
+
+        a {
+          color: black;
+        }
+      }
+    }
+  }
+
+  .contact {
+    margin-top: 2.4rem;
+
+    div span {
+      padding-right: 1.5rem;
+      padding-top: 1rem;
+      text-align: center;
+    }
   }
 
   @media (min-width: 776px) {
@@ -37,3 +113,22 @@ const Wrapper = styled.footer`
 `;
 
 export default Footer;
+
+// height: 5rem;
+// display: flex;
+// flex-direction: column;
+// justify-content: center;
+// align-items: center;
+// background: var(--clr-black);
+// text-align: center;
+// span {
+//   color: var(--clr-primary-5);
+// }
+// h5 {
+//   color: var(--clr-white);
+//   margin: 0.1rem;
+
+//   font-weight: 400;
+//   text-transform: none;
+//   line-height: 1.25;
+// }

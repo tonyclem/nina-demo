@@ -6,6 +6,8 @@ import {
   SortViews,
   HomePageProducts,
   DealView,
+  Reviewer,
+  Contact,
 } from "../components";
 
 const HomePage = () => {
@@ -16,6 +18,8 @@ const HomePage = () => {
       <SortViews />
       <HomePageProducts />
       <DealView />
+      <Reviewer />
+      <Contact />
     </main>
   );
 };

@@ -1,4 +1,5 @@
-// import React from "react";
+import React from "react";
+import { FaBehance, FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
 export const links = [
   {
     id: 1,
@@ -133,5 +134,55 @@ export const dataForHomePage = [
     des: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse, cum. Enim, ex illo. Suscipit, temporibus sunt nemo unde inventore consequatur!",
     imageUrl: "https://i.postimg.cc/ncVqDSSp/fashion-009.jpg",
     price: 100,
+  },
+];
+
+export const comments = [
+  {
+    id: 2,
+    comment: "comfortable and meet all my expections",
+    more: "lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore",
+    imageUrl: "https://i.postimg.cc/WbR9Z0kS/comment-02.jpg",
+    name: "Adam Love",
+    title: "custom",
+  },
+  {
+    id: 3,
+    comment: "comfortable and meet all my expections",
+    more: "lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore",
+    imageUrl: "https://i.postimg.cc/3RSs7NSV/comment-05.jpg",
+    name: "Donald Asher",
+    title: "custom",
+  },
+  {
+    id: 4,
+    comment: "comfortable and meet all my expections",
+    more: "lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore",
+    imageUrl: "https://i.postimg.cc/R03fGDrt/comment-03.jpg",
+    name: "Maria St",
+    title: "custom",
+  },
+];
+
+export const social = [
+  {
+    id: 1,
+    url: "https://www.twitter.com",
+    icon: <FaFacebook />,
+  },
+  {
+    id: 2,
+    url: "https://www.twitter.com",
+    icon: <FaTwitter />,
+  },
+  {
+    id: 3,
+    url: "https://www.twitter.com",
+    icon: <FaLinkedin />,
+  },
+  {
+    id: 4,
+    url: "https://www.twitter.com",
+    icon: <FaBehance />,
   },
 ];
