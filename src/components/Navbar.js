@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { FaBars } from "react-icons/fa";
 import { links } from "../utils/constants";
 import logo from "../assets/logo.svg";
 
@@ -12,6 +13,9 @@ const Nav = () => {
           <Link to="/">
             <img src={logo} alt="logo" />
           </Link>
+          <button type="button" className="nav-toggle">
+            <FaBars />
+          </button>
         </div>
         <ul className="nav-links">
           {links.map((link) => {
@@ -34,23 +38,40 @@ const NavContainer = styled.nav`
   align-items: center;
   justify-content: center;
 
-  .nav-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    img {
-      width: 100px;
-      margin-left: -15;
-    }
-  }
-
   .nav-center {
     width: 90vw;
     margin: 0 auto;
     max-width: var(--max-width);
   }
 
+  .nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    img {
+      width: 100px;
+      margin-left: -15px;
+    }
+  }
+
+  .nav-toggle {
+    background: transparent;
+    border: transparent;
+    cursor: pointer;
+    svg {
+      font-size: 2rem;
+    }
+  }
+
+  .nav-links {
+    display: none;
+  }
+
   @media (min-width: 992px) {
+    .nav-toggle {
+      display: none;
+    }
+
     .nav-center {
       display: grid;
       grid-template-columns: auto 1fr auto;
