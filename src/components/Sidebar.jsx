@@ -19,18 +19,18 @@ const Sidebar = () => {
           <button className="close-btn" type="button" onClick={closeSidebar}>
             <FaTimes />
           </button>
-          <ul className="links">
-            {links.map(({ id, text, url }) => {
-              return (
-                <li key={id}>
-                  <Link to={url} onClick={closeSidebar}>
-                    {text}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
         </div>
+        <ul className="links">
+          {links.map(({ id, text, url }) => {
+            return (
+              <li key={id}>
+                <Link to={url} onClick={closeSidebar}>
+                  {text}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
       </aside>
     </SidebarContainer>
   );

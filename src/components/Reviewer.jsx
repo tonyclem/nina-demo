@@ -45,6 +45,7 @@ const Wrapper = styled.section`
     color: #fff;
     width: 200px;
     margin-top: 4rem;
+    text-align: center;
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 2.5rem;
@@ -73,15 +74,15 @@ const Wrapper = styled.section`
     margin-bottom: 1.2rem;
   }
 
-  @media (min-width: 992px) {
-    .header {
+  @media (max-width: 992px) {
+    .text-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
   }
-  @media (min-width: 576px) {
-    .services-center {
-      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  @media (max-width: 576px) {
+    .text-container {
+      grid-template-columns: 1fr;
     }
   }
 `;

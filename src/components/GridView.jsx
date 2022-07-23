@@ -22,6 +22,7 @@ const GridView = () => {
 const Wrapper = styled.section`
   .featured {
     display: grid;
+    grid-template-columns: auto auto auto auto;
     grid-gap: 1rem;
   }
 
@@ -37,9 +38,17 @@ const Wrapper = styled.section`
     margin-bottom: 1rem;
   }
 
-  @media (min-width: 576px) {
+  @media (max-width: 996px) {
     .featured {
-      grid-template-columns: auto auto auto auto;
+      grid-template-columns: auto auto;
+      gap: -0.5rem;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
     }
   }
 `;
