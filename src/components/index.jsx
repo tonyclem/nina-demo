@@ -8,6 +8,7 @@ import DealView from "./DealView";
 import Reviewer from "./Reviewer";
 import Contact from "./Contact";
 import Sidebar from "./Sidebar";
+import ProductsList from "./views/ProductsList";
 
 export {
   Navbar,
@@ -20,4 +21,5 @@ export {
   Reviewer,
   Contact,
   Sidebar,
+  ProductsList,
 };
