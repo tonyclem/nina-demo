@@ -8,7 +8,7 @@ const GridView = () => {
   return (
     <Wrapper>
       <div className="featured">
-        {dataForHomePage.map((product) => {
+        {dataForHomePage.slice(0, 8).map((product) => {
           return <AllHomePageProduct key={product.id} {...product} />;
         })}
       </div>
@@ -42,13 +42,61 @@ const Wrapper = styled.section`
     .featured {
       grid-template-columns: auto auto;
       gap: -0.5rem;
-    }
 
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        .item-container {
+          width: 100%;
+          margin: auto;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 425px) {
+    .item-container {
+      width: 100%;
+      margin: auto;
+
+      .item {
+        margin: auto;
+        width: 150px;
+        align-items: center;
+
+        .btn {
+          margin: auto;
+          left: 0;
+          right: 0;
+          width: 50%;
+          font-size: 12px;
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 375px) {
+    .item-container {
+      width: 100%;
+
+      .item {
+        margin: 0;
+        width: 110px;
+        align-items: center;
+
+        .btn {
+          margin: auto;
+          left: 0;
+          right: 0;
+          width: 50%;
+          font-size: 10px;
+          margin-bottom: 0.5rem;
+        }
+      }
     }
   }
 `;

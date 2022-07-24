@@ -6,7 +6,7 @@ import { dataForHomePage } from "../utils/constants";
 const ListView = () => {
   return (
     <Wrapper>
-      {dataForHomePage.map((product) => {
+      {dataForHomePage.slice(0, 8).map((product) => {
         const { id, imageUrl, name, price, description, des } = product;
         return (
           <article key={id}>
@@ -42,10 +42,6 @@ const Wrapper = styled.section`
     object-fit: cover;
     border-radius: var(--radius);
     margin-bottom: 1rem;
-  }
-
-  div {
-    margin-left: 8rem;
   }
 
   .btn {

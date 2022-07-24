@@ -115,9 +115,34 @@ const Wrapper = styled.footer`
     align-items: center;
   }
 
-  @media (min-width: 776px) {
-    flex-direction: row;
+  @media (max-width: 776px) {
+    .container {
+      align-items: flex-start;
+      margin: 0 1.5rem;
+      left: 0;
+      right: 0;
+
+      flex-direction: column;
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      h6 {
+        font-size: 0.7rem;
+      }
+
+      .social-icon a {
+        font-size: 0.5rem;
+      }
+
+      p {
+        font-size: 0.8rem;
+      }
+    }
   }
+
+  @media();
 `;
 
 export default Footer;

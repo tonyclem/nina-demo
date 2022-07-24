@@ -7,7 +7,7 @@ import Time from "./time";
 const DealView = () => {
   return (
     <Wrapper>
-      <section className="container">
+      <section className="container ">
         <div className="info">
           <h3>Deal of The Day</h3>
           <p>
@@ -15,7 +15,7 @@ const DealView = () => {
             Dolorem. <br />
             Ipsam, reiciendis enim.
           </p>
-          <div>
+          <div className="time">
             <Time />
           </div>
           <button className="btn btn-primary">Shop Now</button>
@@ -39,6 +39,7 @@ const DealView = () => {
 
 const Wrapper = styled.section`
   display: grid;
+  grid: 4rem;
 
   .container {
     position: relative;
@@ -85,7 +86,44 @@ const Wrapper = styled.section`
     height: 42px;
   }
 
-  @media (min-width: 992px) {
+  @media (max-width: 465px) {
+    .container {
+      width: 80%;
+      text-align: center;
+    }
+
+    .info {
+      text-align: center;
+
+      .time {
+        font-size: 0.6rem;
+
+        .digits {
+          text-align: center;
+        }
+
+        span {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+
+    .img-info {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      width: 80%;
+      margin: auto;
+      text-align: center;
+    }
+
+    .img-info {
+      display: none;
+    }
   }
 `;
 

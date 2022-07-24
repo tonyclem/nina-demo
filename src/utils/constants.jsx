@@ -135,6 +135,22 @@ export const dataForHomePage = [
     imageUrl: "https://i.postimg.cc/ncVqDSSp/fashion-009.jpg",
     price: 100,
   },
+  {
+    id: 7,
+    name: "lionel",
+    description: "nice African dress",
+    des: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse, cum. Enim, ex illo. Suscipit, temporibus sunt nemo unde inventore consequatur!",
+    imageUrl: "https://i.postimg.cc/cJCDB4D1/fashion-08.jpg",
+    price: 100,
+  },
+  {
+    id: 8,
+    name: "lionel",
+    description: "nice African dress",
+    des: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse, cum. Enim, ex illo. Suscipit, temporibus sunt nemo unde inventore consequatur!",
+    imageUrl: "https://i.postimg.cc/ncVqDSSp/fashion-009.jpg",
+    price: 100,
+  },
 ];
 
 export const comments = [

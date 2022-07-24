@@ -39,7 +39,6 @@ const Reviewer = () => {
 
 const Wrapper = styled.section`
   text-align: center;
-  margin: 1rem;
 
   .text-container {
     color: #fff;
@@ -76,13 +75,25 @@ const Wrapper = styled.section`
 
   @media (max-width: 992px) {
     .text-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
+      margin: 1.5rem auto;
+      width: 100%;
+
+      .container {
+        margin: auto;
+      }
     }
   }
   @media (max-width: 576px) {
     .text-container {
       grid-template-columns: 1fr;
+      margin: auto;
+      margin: 1.5rem auto;
+      width: 100%;
+
+      .container {
+        margin: auto;
+      }
     }
   }
 `;
