@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { FaTimes } from "react-icons/fa";
 import { links } from "../utils/constants";
+import CartButtons from "./CartButtons";
 
 import logo from "../assets/logo.svg";
 import { useProductsContext } from "../context/products_context";
@@ -31,6 +32,7 @@ const Sidebar = () => {
             );
           })}
         </ul>
+        <CartButtons />
       </aside>
     </SidebarContainer>
   );

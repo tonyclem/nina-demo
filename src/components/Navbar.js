@@ -5,6 +5,7 @@ import { FaBars } from "react-icons/fa";
 import { links } from "../utils/constants";
 import logo from "../assets/logo.svg";
 import { useProductsContext } from "../context/products_context";
+import CartButtons from "./CartButtons";
 
 const Nav = () => {
   const { openSidebar } = useProductsContext();
@@ -29,6 +30,7 @@ const Nav = () => {
             );
           })}
         </ul>
+        <CartButtons />
       </div>
     </NavContainer>
   );
@@ -69,6 +71,10 @@ const NavContainer = styled.nav`
     display: none;
   }
 
+  .cart-btn-wrapper {
+    display: none;
+  }
+
   @media (min-width: 992px) {
     .nav-toggle {
       display: none;
@@ -96,6 +102,9 @@ const NavContainer = styled.nav`
           border-bottom: 3px solid var(--clr-green-dark);
         }
       }
+    }
+    .cart-btn-wrapper {
+      display: grid;
     }
   }
 `;

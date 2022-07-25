@@ -9,6 +9,8 @@ import Reviewer from "./Reviewer";
 import Contact from "./Contact";
 import Sidebar from "./Sidebar";
 import ProductsList from "./views/ProductsList";
+import PageHero from "./PageHero";
+import CartButtons from "./CartButtons";
 
 export {
   Navbar,
@@ -22,4 +24,6 @@ export {
   Contact,
   Sidebar,
   ProductsList,
+  PageHero,
+  CartButtons,
 };

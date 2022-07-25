@@ -4,6 +4,7 @@ import { SIDEBAR_OPEN, SIDEBAR_CLOSE } from "../action";
 
 const initialState = {
   isSidebarOpen: false,
+  single_product: {},
 };
 
 const ProductsContext = React.createContext();

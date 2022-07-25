@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import queenStyle from "../assets/queenStyle-01.jpeg";
+import { PageHero } from "../components";
 const AboutPage = () => {
   return (
     <main>
+      <PageHero title="about" />
       <Wrapper className="page section section-center">
         <img src={queenStyle} alt="about imag" />
         <article>

@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { BsHeart } from "react-icons/bs";
+import { Link } from "react-router-dom";
+import { FaShoppingCart } from "react-icons/fa";
 
 const AllHomePageProduct = ({ id, imageUrl, name, description, price }) => {
   return (
@@ -16,6 +18,9 @@ const AllHomePageProduct = ({ id, imageUrl, name, description, price }) => {
             <span>
               <BsHeart />
             </span>
+            <Link to={`/products/${id}`} className="link">
+              <FaShoppingCart />
+            </Link>
             <button className="btn btn-color">{`€${price}.00`}</button>
           </div>
           <footer>
@@ -62,6 +67,35 @@ const Wrapper = styled.section`
     left: 4rem;
     color: #000;
     background: #f1f1f1;
+  }
+
+  .link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--clr-primary-5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    hight: 2.5rem;
+    border-radius: 50%;
+    transition: var(--transition);
+    opacity: 0;
+    cursor: pointer;
+    svg {
+      font-size: 1.25rem;
+      color: var(--clr-white);
+    }
+  }
+
+  .item:hover {
+    opacity: 0.5;
+  }
+
+  .item:hover .link {
+    opacity: 1;
   }
 
   footer {

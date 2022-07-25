@@ -17,7 +17,9 @@ const ListView = () => {
               <button className="btn btn-color">{`€${price}.00`}</button>
               <p>{description}</p>
               <p>{des}</p>
-              <button className="btn">Details</button>
+              <Link to={"/products"} className="btn">
+                Details
+              </Link>
             </div>
           </article>
         );
