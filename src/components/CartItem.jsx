@@ -4,17 +4,17 @@ import styled from "styled-components";
 import AmountButtons from "./AmountButtons";
 import { FaTrash } from "react-icons/fa";
 
-const CartItem = () => {
+const CartItem = ({ imageUrl, name, amount, price }) => {
   return (
     <Wrapper>
       <div className="title">
-        <img src="https://i.postimg.cc/43N2zxNS/clothes-20.jpg" alt="fashion" />
-        <h5 className="name">fashion</h5>
-        <h5 className="price-small">€100</h5>
+        <img src={imageUrl} alt="fashion" />
+        <h5 className="name">{name}</h5>
+        <h5 className="price-small">{price}</h5>
       </div>
-      <h5 className="price">€100.00</h5>
-      <AmountButtons />
-      <h5 className="subtotal">€200.00</h5>
+      <h5 className="price">{name}</h5>
+      <AmountButtons amount={amount} />
+      <h5 className="subtotal">{price}</h5>
       <button className="remove-btn" type="button">
         <FaTrash />
       </button>

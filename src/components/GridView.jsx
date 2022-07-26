@@ -2,8 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import AllHomePageProduct from "./AllHomePageProduct";
+import { useCartContext } from "../context/cart_context";
+import { useProductsContext } from "../context/products_context";
 
 const GridView = ({ products }) => {
+  const { addItemToCart } = useCartContext();
   return (
     <Wrapper>
       <div className="featured">
