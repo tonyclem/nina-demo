@@ -1,14 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { dataForHomePage } from "../utils/constants";
 import AllHomePageProduct from "./AllHomePageProduct";
 
-const GridView = () => {
+const GridView = ({ products }) => {
   return (
     <Wrapper>
       <div className="featured">
-        {dataForHomePage.slice(0, 8).map((product) => {
+        {products.slice(0, 8).map((product) => {
           return <AllHomePageProduct key={product.id} {...product} />;
         })}
       </div>

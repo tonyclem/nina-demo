@@ -1,12 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { dataForHomePage } from "../utils/constants";
 
-const ListView = () => {
+const ListView = ({ products }) => {
   return (
     <Wrapper>
-      {dataForHomePage.slice(0, 8).map((product) => {
+      {products.slice(0, 8).map((product) => {
         const { id, imageUrl, name, price, description, des } = product;
         return (
           <article key={id}>
