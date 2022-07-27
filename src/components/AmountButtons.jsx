@@ -1,18 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import { FaPlus, FaMinus } from "react-icons/fa";
-import { useCartContext } from "../context/cart_context";
 
-const AmountButtons = ({ amount }) => {
-  const { cartItems, addItemToCart, removeItemToCart } = useCartContext();
-
+const AmountButtons = ({ amount, increase, decrease }) => {
   return (
     <Wrapper className="amount-btns">
-      <button className="amount-btn" type="button">
+      <button className="amount-btn" type="button" onClick={decrease}>
         <FaMinus />
       </button>
       <h2 className="amount">{amount}</h2>
-      <button className="amount-btn" type="button">
+      <button className="amount-btn" type="button" onClick={increase}>
         <FaPlus />
       </button>
     </Wrapper>

@@ -16,11 +16,16 @@ const addCartItem = (cartItems, productToAdd) => {
   return [...cartItems, { ...productToAdd, amount: 1 }];
 };
 
+const clearCartItem = (cartItems, cartItemToClear) =>
+  cartItems.filter((cartItem) => cartItem.id !== cartItemToClear.id);
+
 const CartContext = React.createContext({
   cartItems: [],
   addItemToCart: () => {},
-  cartCount: 0,
   removeItemFromCart: () => {},
+  clearItemFromCart: () => {},
+  cartCount: 0,
+  cartTotal: 0,
 });
 
 const removeCartItem = (cartItems, cartItemToRemove) => {
@@ -28,7 +33,7 @@ const removeCartItem = (cartItems, cartItemToRemove) => {
   const findCartItemToRemove = cartItems.find(
     (item) => item.id === cartItemToRemove.id
   );
-  if (findCartItemToRemove.length > 0) {
+  if (findCartItemToRemove.amount === 1) {
     return cartItems.filter((item) => item.id !== cartItemToRemove.id);
   }
 
@@ -42,6 +47,7 @@ const removeCartItem = (cartItems, cartItemToRemove) => {
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [cartCount, setCartCount] = useState(0);
+  const [cartTotal, setCartTotal] = useState(0);
 
   useEffect(() => {
     const newCartCount = cartItems.reduce(
@@ -49,6 +55,14 @@ export const CartProvider = ({ children }) => {
       0
     );
     setCartCount(newCartCount);
+  }, [cartItems]);
+
+  useEffect(() => {
+    const newCartTotal = cartItems.reduce(
+      (total, cartItem) => total + cartItem.amount * cartItem.price,
+      0
+    );
+    setCartTotal(newCartTotal);
   }, [cartItems]);
 
   const addItemToCart = (productsToAdd) => {
@@ -59,6 +73,10 @@ export const CartProvider = ({ children }) => {
     setCartItems(removeCartItem(cartItems, cartItemToRemove));
   };
 
+  const clearItemFromCart = (cartItemToClear) => {
+    setCartItems(clearCartItem(cartItems, cartItemToClear));
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -66,6 +84,8 @@ export const CartProvider = ({ children }) => {
         cartItems,
         cartCount,
         removeItemToCart,
+        clearItemFromCart,
+        cartTotal,
       }}
     >
       {children}

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useCartContext } from "../context/cart_context";
 import CartColumns from "./CartColumns";
 import CartItem from "./CartItem";
+import CartTotals from "./CartTotals";
 
 const CartContext = () => {
   const { cartItems } = useCartContext();
@@ -12,6 +13,8 @@ const CartContext = () => {
       {cartItems.map((item) => (
         <CartItem key={item.id} {...item} />
       ))}
+      <hr />
+      <CartTotals />
     </Wrapper>
   );
 };
