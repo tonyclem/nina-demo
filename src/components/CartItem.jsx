@@ -6,13 +6,15 @@ import { FaTrash } from "react-icons/fa";
 import { useCartContext } from "../context/cart_context";
 
 const CartItem = ({ id, imageUrl, name, amount, price }) => {
-  const { cartItems, addItemToCart } = useCartContext();
+  const { cartItems, addItemToCart, removeItemToCart } = useCartContext();
 
   const increase = () => {
     addItemToCart({ id, name, amount: amount + cartItems, price });
   };
 
-  const decrease = () => {};
+  const decrease = () => {
+    addItemToCart(removeItemToCart);
+  };
 
   return (
     <Wrapper key={id}>
@@ -22,7 +24,7 @@ const CartItem = ({ id, imageUrl, name, amount, price }) => {
         <h5 className="price-small">{price}</h5>
       </div>
       <h5 className="price">{`€${price}.00`}</h5>
-      <AmountButtons amount={amount} increase={increase} decrease={decrease} />
+      <AmountButtons amount={amount} />
       <h5 className="subtotal">{`€${price * amount}.00`}</h5>
       <button className="remove-btn" type="button">
         <FaTrash />

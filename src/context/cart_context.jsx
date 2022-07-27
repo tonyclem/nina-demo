@@ -18,11 +18,26 @@ const addCartItem = (cartItems, productToAdd) => {
 
 const CartContext = React.createContext({
   cartItems: [],
-  total_items: 0,
-  total_amount: 0,
   addItemToCart: () => {},
   cartCount: 0,
+  removeItemFromCart: () => {},
 });
+
+const removeCartItem = (cartItems, cartItemToRemove) => {
+  // find the cart item to remove
+  const findCartItemToRemove = cartItems.find(
+    (item) => item.id === cartItemToRemove.id
+  );
+  if (findCartItemToRemove.length > 0) {
+    return cartItems.filter((item) => item.id !== cartItemToRemove.id);
+  }
+
+  return cartItems.map((cartItem) =>
+    cartItem.id === cartItemToRemove.id
+      ? { ...cartItem, amount: cartItem.amount - 1 }
+      : cartItem
+  );
+};
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
@@ -40,12 +55,17 @@ export const CartProvider = ({ children }) => {
     setCartItems(addCartItem(cartItems, productsToAdd));
   };
 
+  const removeItemToCart = (cartItemToRemove) => {
+    setCartItems(removeCartItem(cartItems, cartItemToRemove));
+  };
+
   return (
     <CartContext.Provider
       value={{
         addItemToCart,
         cartItems,
         cartCount,
+        removeItemToCart,
       }}
     >
       {children}
