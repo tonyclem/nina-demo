@@ -3,18 +3,27 @@ import styled from "styled-components";
 
 import AmountButtons from "./AmountButtons";
 import { FaTrash } from "react-icons/fa";
+import { useCartContext } from "../context/cart_context";
 
-const CartItem = ({ imageUrl, name, amount, price }) => {
+const CartItem = ({ id, imageUrl, name, amount, price }) => {
+  const { cartItems, addItemToCart } = useCartContext();
+
+  const increase = () => {
+    addItemToCart({ id, name, amount: amount + cartItems, price });
+  };
+
+  const decrease = () => {};
+
   return (
-    <Wrapper>
+    <Wrapper key={id}>
       <div className="title">
         <img src={imageUrl} alt="fashion" />
         <h5 className="name">{name}</h5>
         <h5 className="price-small">{price}</h5>
       </div>
-      <h5 className="price">{name}</h5>
-      <AmountButtons amount={amount} />
-      <h5 className="subtotal">{price}</h5>
+      <h5 className="price">{`€${price}.00`}</h5>
+      <AmountButtons amount={amount} increase={increase} decrease={decrease} />
+      <h5 className="subtotal">{`€${price * amount}.00`}</h5>
       <button className="remove-btn" type="button">
         <FaTrash />
       </button>

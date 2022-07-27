@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import { useCartContext } from "../context/cart_context";
 
-const AllHomePageProduct = ({ id, imageUrl, name, description, price }) => {
+const AllHomePageProduct = (products) => {
+  const { id, imageUrl, name, description, price } = products;
   const { addItemToCart } = useCartContext();
   return (
     <Wrapper>
@@ -21,12 +22,9 @@ const AllHomePageProduct = ({ id, imageUrl, name, description, price }) => {
               <BsHeart />
             </span>
             <Link to={``} className="link">
-              <FaShoppingCart />
+              <FaShoppingCart onClick={() => addItemToCart(products)} />
             </Link>
-            <button
-              className="btn btn-color"
-              onClick={() => addItemToCart(id)}
-            >{`€${price}.00`}</button>
+            <button className="btn btn-color">{`€${price}.00`}</button>
           </div>
           <footer>
             <h5>{name}</h5>

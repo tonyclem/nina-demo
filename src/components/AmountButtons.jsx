@@ -20,7 +20,8 @@ const Wrapper = styled.div`
   display: grid;
   width: 140px;
   justify-content: center;
-  grid-align: center;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
   h2 {
     margin-bottom: 0;
   }

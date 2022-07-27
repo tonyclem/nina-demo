@@ -1,14 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { useCartContext } from "../context/cart_context";
-import { useProductsContext } from "../context/products_context";
 import CartColumns from "./CartColumns";
 import CartItem from "./CartItem";
 
 const CartContext = () => {
   const { cartItems } = useCartContext();
-
-  const { products } = useProductsContext();
   return (
     <Wrapper className="section section-center">
       <CartColumns />
