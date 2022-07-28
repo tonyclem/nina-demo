@@ -37,10 +37,14 @@ const Nav = () => {
 };
 
 const NavContainer = styled.nav`
+  position: sticky;
+  top: 0;
   height: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #fff;
+  z-index: 1000;
 
   .nav-center {
     width: 90vw;

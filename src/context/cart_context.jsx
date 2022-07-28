@@ -26,6 +26,7 @@ const CartContext = React.createContext({
   clearItemFromCart: () => {},
   cartCount: 0,
   cartTotal: 0,
+  shippingFee: 5.3,
 });
 
 const removeCartItem = (cartItems, cartItemToRemove) => {
@@ -86,6 +87,7 @@ export const CartProvider = ({ children }) => {
         removeItemToCart,
         clearItemFromCart,
         cartTotal,
+        shippingFee: 5.3,
       }}
     >
       {children}

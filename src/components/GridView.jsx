@@ -44,35 +44,40 @@ const Wrapper = styled.section`
 
       .container {
         display: flex;
-        flex-wrap: wrap;
         align-items: center;
         justify-content: center;
 
         .item-container {
           width: 100%;
-          margin: auto;
         }
       }
     }
   }
 
   @media (max-width: 425px) {
-    .item-container {
-      width: 100%;
-      margin: auto;
+    .featured {
+      grid-gap: 0.5rem;
+    }
 
-      .item {
-        margin: auto;
-        width: 150px;
-        align-items: center;
+    .container {
+      justify-content: space-between;
 
-        .btn {
+      .item-container {
+        width: 100%;
+
+        .item {
           margin: auto;
-          left: 0;
-          right: 0;
-          width: 50%;
-          font-size: 12px;
-          margin-bottom: 0.5rem;
+          width: 150px;
+          align-items: center;
+
+          .btn {
+            margin: auto;
+            left: 0;
+            right: 0;
+            width: 50%;
+            font-size: 12px;
+            margin-bottom: 0.5rem;
+          }
         }
       }
     }

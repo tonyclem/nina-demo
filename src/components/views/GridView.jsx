@@ -53,22 +53,31 @@ const Wrapper = styled.section`
   }
 
   @media (max-width: 425px) {
-    .item-container {
-      width: 100%;
-      margin: auto;
+    .featured {
+      grid-gap: 0.5rem;
+    }
 
-      .item {
-        margin: auto;
-        width: 150px;
-        align-items: center;
+    .container {
+      justify-content: space-between;
 
-        .btn {
-          margin: auto;
-          left: 0;
-          right: 0;
-          width: 50%;
-          font-size: 12px;
-          margin-bottom: 0.5rem;
+      .item-container {
+        width: 100%;
+
+        .item {
+          margin: auto auto;
+          width: 130px;
+          height: 220px;
+          object-fit: fill;
+          align-items: center;
+
+          .btn {
+            margin: auto;
+            left: 0;
+            right: 0;
+            width: 50%;
+            font-size: 12px;
+            margin-bottom: 0.5rem;
+          }
         }
       }
     }
@@ -79,8 +88,10 @@ const Wrapper = styled.section`
       width: 100%;
 
       .item {
-        margin: 0;
-        width: 110px;
+        margin: auto auto;
+        width: 130px;
+        height: 220px;
+        object-fit: fill;
         align-items: center;
 
         .btn {
