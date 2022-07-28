@@ -12,6 +12,7 @@ import ProductsList from "./views/ProductsList";
 import PageHero from "./PageHero";
 import CartButtons from "./CartButtons";
 import CartContext from "./CartContent";
+import ThemeComponents from "./theme/theme";
 
 export {
   Navbar,
@@ -28,4 +29,5 @@ export {
   PageHero,
   CartButtons,
   CartContext,
+  ThemeComponents,
 };

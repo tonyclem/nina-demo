@@ -6,6 +6,7 @@ import { links } from "../utils/constants";
 import logo from "../assets/logo.svg";
 import { useProductsContext } from "../context/products_context";
 import CartButtons from "./CartButtons";
+import ThemeComponents from "./theme/theme";
 
 const Nav = () => {
   const { openSidebar } = useProductsContext();
@@ -29,6 +30,9 @@ const Nav = () => {
               </li>
             );
           })}
+          <span className="span-inner">
+            Mode <ThemeComponents />{" "}
+          </span>
         </ul>
         <CartButtons />
       </div>
@@ -77,6 +81,10 @@ const NavContainer = styled.nav`
 
   .cart-btn-wrapper {
     display: none;
+  }
+
+  .span-inner {
+    margin-left: 7rem;
   }
 
   @media (min-width: 992px) {

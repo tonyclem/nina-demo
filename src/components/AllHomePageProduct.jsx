@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { BsHeart } from "react-icons/bs";
-import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import { useCartContext } from "../context/cart_context";
 
@@ -21,9 +20,9 @@ const AllHomePageProduct = (products) => {
             <span>
               <BsHeart />
             </span>
-            <Link to={``} className="link">
+            <button type="button" className="link">
               <FaShoppingCart onClick={() => addItemToCart(products)} />
-            </Link>
+            </button>
             <button className="btn btn-color">{`€${price}.00`}</button>
           </div>
           <footer>

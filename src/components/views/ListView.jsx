@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { useCartContext } from "../../context/cart_context";
 
 const ListView = ({ products }) => {
+  const { addItemToCart } = useCartContext();
   return (
     <Wrapper>
       {products.map((product) => {
@@ -16,9 +17,13 @@ const ListView = ({ products }) => {
               <button className="btn btn-color">{`€${price}.00`}</button>
               <p>{description}</p>
               <p>{des}</p>
-              <Link to={"/products"} className="btn">
-                Details
-              </Link>
+              <button
+                type="button"
+                className="btn"
+                onClick={() => addItemToCart(product)}
+              >
+                add to cart
+              </button>
             </div>
           </article>
         );
