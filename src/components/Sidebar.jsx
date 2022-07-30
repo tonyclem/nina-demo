@@ -7,6 +7,7 @@ import CartButtons from "./CartButtons";
 import logo from "../assets/logo.svg";
 import { useProductsContext } from "../context/products_context";
 import { Link } from "react-router-dom";
+import ThemeComponents from "./theme/theme";
 
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useProductsContext();
@@ -31,6 +32,7 @@ const Sidebar = () => {
               </li>
             );
           })}
+          <ThemeComponents />
         </ul>
         <CartButtons />
       </aside>

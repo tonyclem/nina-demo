@@ -2,7 +2,7 @@ import { createContext, useState, useEffect } from "react";
 
 export const themes = {
   dark: "",
-  light: "white-content",
+  light: "light-theme",
 };
 
 export const ThemeContext = createContext({
@@ -19,9 +19,9 @@ export const ThemeContextWrapper = ({ children }) => {
 
   useEffect(() => {
     if (theme === themes.light) {
-      document.body.classList.add("white-content");
+      document.body.classList.add("light-theme");
     } else if (theme === themes.dark) {
-      document.body.classList.remove("white-content");
+      document.body.classList.remove("light-theme");
     }
   }, [theme]);
 

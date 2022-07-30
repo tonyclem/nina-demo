@@ -52,7 +52,7 @@ const Wrapper = styled.section`
 
   .container {
     width: 370px;
-    background-color: #000;
+    background: #1a1a1a;
     padding: 1.3rem 0.9rem;
     border-radius: 0.5rem;
     margin-top: 0.5rem;

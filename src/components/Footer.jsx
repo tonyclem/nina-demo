@@ -63,7 +63,7 @@ const Footer = () => {
 };
 
 const Wrapper = styled.footer`
-  background: #d9d9d9;
+  background: var(--clr-footer-bg);
 
   .container {
     margin: 0 3rem;

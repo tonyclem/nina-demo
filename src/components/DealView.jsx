@@ -46,7 +46,7 @@ const Wrapper = styled.section`
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 90%;
-    border: 1px solid black;
+    border: 1px solid var(--clr-black);
     margin: 3rem;
     border-radius: var(--radius);
   }

@@ -67,7 +67,7 @@ const Wrapper = styled.section`
   }
 
   span {
-    border: 1px solid black;
+    border: 1px solid var(--clr-black);
     margin-right: 0.4rem;
     border-radius: 5px;
     text-align: center;

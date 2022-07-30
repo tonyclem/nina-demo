@@ -28,6 +28,7 @@ const Wrapper = styled.div`
   button {
     background: transparent;
     border-color: transparent;
+    color: var(--clr-grey-5);
     cursor: pointer;
     padding: 1rem 0;
     width: 2rem;
