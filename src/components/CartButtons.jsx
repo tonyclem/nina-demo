@@ -16,7 +16,9 @@ const CartButtons = () => {
           <span className="cart-value">{cartCount}</span>
         </span>
       </Link>
-      <button className="auth-btn">Login</button>
+      <Link to="/login" className="auth-btn">
+        Login
+      </Link>
     </Wrapper>
   );
 };
