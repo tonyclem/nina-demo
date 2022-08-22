@@ -1,10 +1,15 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 
 const SingleProductPage = () => {
-  const { id } = useParams();
-  console.log(id);
-  return <h1>Hello single page</h1>;
+  const params = useParams();
+  const { id } = params;
+  return (
+    <div>
+      <h1>Single Product Page</h1>
+      <p>Product id: {id}</p>
+    </div>
+  );
 };
 
 export default SingleProductPage;
